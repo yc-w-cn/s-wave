@@ -78,7 +78,9 @@ export function AudioPlayer({ feedItem }: AudioPlayerProps) {
         className="w-64 h-64 mx-auto rounded-lg mb-4 shadow-lg shadow-pink-50"
       />
       <h2 className="text-xl font-semibold text-center">{feedItem.title}</h2>
-      <p className="text-gray-600 text-sm text-center">@{feedItem.creator}</p>
+      <p className="text-gray-600 text-sm text-center">
+        {feedItem.creator ? `@${feedItem.creator}` : ""}
+      </p>
       <div className="mt-6 flex justify-center items-center">
         <button
           className="p-3 rounded-full bg-gray-200 hover:bg-gray-300 focus:outline-none"
