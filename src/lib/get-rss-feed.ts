@@ -6,7 +6,7 @@
 
 import axios from "axios";
 import * as cheerio from "cheerio";
-import { easyCorsProxy } from "./cors-proxy";
+import { corsProxy } from "./cors-proxy";
 import queryString from "query-string";
 
 /**
@@ -15,7 +15,7 @@ import queryString from "query-string";
  */
 export async function getRssFeed(url: string) {
   const res = await axios.post(
-    easyCorsProxy("https://www.getrssfeed.com/"),
+    corsProxy("https://www.getrssfeed.com/"),
     queryString.stringify({
       url,
     }),
