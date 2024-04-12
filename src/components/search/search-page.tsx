@@ -1,16 +1,20 @@
+'use client';
+
 import { FeaturedPodcastList } from "@/components/podcast/featured-podcast-list";
+import { ErrorContent } from "@/components/ui/error-content";
 import { cn } from "@/utils";
+import { useSearchParams } from "next/navigation";
 import { useMemo } from "react";
 
-export interface Props {
-  params: { keyword: string };
-}
+export function SearchPage() {
+  const searchParams = useSearchParams();
+  const rawKeyword = searchParams.get("keyword") || "";
+  const keyword = useMemo(() => decodeURIComponent(rawKeyword), [rawKeyword]);
 
-export default function Page({ params }: Props) {
-  const keyword = useMemo(
-    () => decodeURIComponent(params.keyword),
-    [params.keyword]
-  );
+  if (!keyword) {
+    return <ErrorContent />;
+  }
+
   return (
     <div
       className={cn(

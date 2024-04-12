@@ -2,7 +2,7 @@
 
 import "@/app/globals.css";
 import { NavBar } from "@/components/nav/nav-bar";
-import { Search } from "@/components/search";
+import { Search } from "@/components/search/search";
 import { SubscribeButton } from "@/components/subscribe/subscribe-button";
 import { Logo } from "@/components/logo";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
@@ -10,9 +10,9 @@ import { PropsWithChildren } from "react";
 import { Provider } from "use-pouchdb";
 import PouchDB from "pouchdb-browser";
 import { cn } from "@/utils";
-import PouchDBFind from "pouchdb-find"
+import PouchDBFind from "pouchdb-find";
 
-PouchDB.plugin(PouchDBFind)
+PouchDB.plugin(PouchDBFind);
 const db = new PouchDB("local");
 
 export default function BaseLayout({ children }: PropsWithChildren) {

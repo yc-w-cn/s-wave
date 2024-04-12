@@ -10,6 +10,10 @@ export function corsProxy(url: string) {
   return proxyUrl;
 }
 
+/**
+ * easy-cors-proxy
+ * @see {@link https://github.com/yc-w-cn/easy-cors-proxy}
+ */
 export function easyCorsProxy(url: string) {
   const endpoint = process.env.NEXT_PUBLIC_EASY_CORS_PROXY_ENDPOINT;
   const accessToken = process.env.NEXT_PUBLIC_EASY_CORS_PROXY_ACCESS_TOKEN;

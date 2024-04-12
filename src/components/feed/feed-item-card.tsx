@@ -21,7 +21,7 @@ export function FeedItemCard({ feedItem }: Props) {
 
   return (
     <Link
-      href={`/item/${guid}`}
+      href={`/item/?guid=${guid}`}
       className="flex-none bg-white p-5 rounded-xl flex flex-col gap-3 items-start border overflow-hidden hover:border-pink-500"
     >
       <span className="text-sm bg-gray-100 px-2 rounded-lg text-gray-700">

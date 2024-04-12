@@ -12,11 +12,11 @@ import { getRssContent } from "@/lib";
 import { cn } from "@/utils";
 import { usePouch } from "use-pouchdb";
 import { saveFeedItems } from "@/lib/save-feed-items";
+import { useSearchParams } from "next/navigation";
 
-export interface Props {
-  pageId: string;
-}
-export function PodcastPage({ pageId }: Props) {
+export function PodcastPage() {
+  const searchParams = useSearchParams()
+  const pageId = searchParams.get('id')
   const db = usePouch();
   const [feedContent, setFeedContent] = useState<CustomOutput & any>();
   const { data: feedUrl } = useSWR(
@@ -28,10 +28,10 @@ export function PodcastPage({ pageId }: Props) {
     if (feedUrl) {
       getRssContent(feedUrl).then((res) => {
         setFeedContent(res);
-        saveFeedItems(db, res.items)
+        saveFeedItems(db, res.items);
       });
     }
-  }, [feedUrl, db]);
+  }, [feedUrl, db, pageId]);
 
   if (!feedContent) {
     return <></>;

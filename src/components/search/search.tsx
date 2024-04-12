@@ -10,7 +10,7 @@ export function Search() {
 
   const handleKeyDown = (event: any) => {
     if (event.key === "Enter") {
-      const searchUrl = `/search/${encodeURIComponent(inputValue)}`
+      const searchUrl = `/search/?keyword=${encodeURIComponent(inputValue)}`
       setInputValue("")
       router.push(searchUrl);
     }

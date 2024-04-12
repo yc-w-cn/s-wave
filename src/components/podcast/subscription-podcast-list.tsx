@@ -22,10 +22,10 @@ export function SubscriptionPodcastList() {
 
   return (
     <div className="grid grid-cols-6 gap-4">
-      {docs.map((doc, index) => (
+      {docs.map((doc) => (
         <Link
           key={`podcast-${doc._id}`}
-          href={`/podcast/${doc._id}`}
+          href={`/podcast/?id=${doc._id}`}
           className="bg-white border p-2 rounded shadow-sm hover:border-pink-500"
         >
           <CachedImage

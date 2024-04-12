@@ -1,6 +1,6 @@
 export interface Props {
-  code: number;
-  message: string;
+  code?: number;
+  message?: string;
 }
 export function ErrorContent({ code = 404, message = "页面找不到了" }: Props) {
   return (

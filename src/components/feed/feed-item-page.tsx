@@ -10,12 +10,11 @@ import { WhisperSettingButton } from "../whisper/whisper-setting-button";
 import { FontSizeSetting } from "../font-size-setting";
 import { cn } from "@/utils";
 import { useDoc } from "use-pouchdb";
+import { useSearchParams } from "next/navigation";
 
-export interface Props {
-  guid: string;
-}
-
-export function FeedItemPage({ guid }: Props) {
+export function FeedItemPage() {
+  const searchParams = useSearchParams()
+  const guid = searchParams.get('guid') || ""
   const { doc: feedItem, loading } = useDoc(guid);
 
   const transcriber = useTranscriber();

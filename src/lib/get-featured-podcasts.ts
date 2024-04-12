@@ -1,13 +1,13 @@
 import axios from "axios";
 import * as cheerio from "cheerio";
-import { corsProxy } from "./cors-proxy";
+import { easyCorsProxy } from "./cors-proxy";
 import { generateHash } from "@/utils";
 import localforage from "localforage";
 import { combine } from "@/utils/url";
 
 export async function getFeaturedPodcasts() {
   const url = "https://typlog.com/featured/podcasts";
-  const proxiedUrl = corsProxy(url);
+  const proxiedUrl = easyCorsProxy(url);
   const res = await axios.get(proxiedUrl);
   return parseResult(res.data);
 }

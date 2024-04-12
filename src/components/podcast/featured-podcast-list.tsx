@@ -32,7 +32,7 @@ export function FeaturedPodcastList({ keyword }: Props) {
       {podcasts.map((podcast, index) => (
         <Link
           key={`podcast-${index}`}
-          href={`/podcast/${podcast.id}`}
+          href={`/podcast/?id=${podcast.id}`}
           className="bg-white border p-2 rounded shadow-sm hover:border-pink-500"
         >
           <CachedImage
