@@ -9,6 +9,16 @@ S-WAVE is a pure browser application designed for podcast consumption. It provid
 - **WebAssembly Integration**: Harnesses the power of WebAssembly to optimize performance and deliver smooth user experience.
 - **MIT License**: S-WAVE is released under the permissive MIT License, allowing for open collaboration and contribution from the community.
 
+## Screenshots
+
+![Hot Screenshot](screenshots/screenshot-hot.png)
+
+![Podcast Screenshot](screenshots/screenshot-podcast.png)
+
+![Loading Screenshot](screenshots/screenshot-loading.png)
+
+![Transcribing Screenshot](screenshots/screenshot-transcribing.jpg)
+
 ## References
 
 - [whisper-web](https://github.com/xenova/whisper-web)
