@@ -115,7 +115,7 @@ export function WhisperAudioProcess(props: Props) {
       </div>
       {isAudioLoading && (
         <div className="flex my-3 gap-2">
-          <Progress text={"正在下载音频..."} percentage={progress * 100} />
+          <Progress text={"正在加载音频..."} percentage={progress * 100} />
           <button
             className="flex-none bg-gray-100 text-gray-500 text-xs rounded-xl px-2 py-1"
             onClick={() => {
