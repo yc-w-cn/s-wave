@@ -45,12 +45,14 @@ export function SubscribeCard() {
               "flex flex-row items-center justify-center gap-1"
             )}
             onClick={async () => {
+              setIsLoading(true)
               const targetUrl = isPodcast ? await getRssFeed(url) : url || "";
               if (targetUrl && isValidUrl(targetUrl)) {
                 const id = await generateHash(targetUrl);
                 await localforage.setItem(`FEED_URL_${id}`, targetUrl);
-                router.push(`/podcast/${id}`);
+                router.push(`/podcast/?id=${id}`);
               }
+              setIsLoading(false)
             }}
           >
             {isLoading ? (
