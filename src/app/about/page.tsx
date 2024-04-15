@@ -15,7 +15,7 @@ export default function Page() {
         <p>AI听译功能利用浏览器的 WASM 特性实现，为用户提供流畅的听译体验。</p>
       </div>
       <h3 className="font-bold text-lg text-pink-500 my-3">功能特点</h3>
-      <div className="bg-white p-8 rounded-lg text-gray-700 leading-7">
+      <div className="bg-white p-8 rounded-lg text-sm text-gray-700 leading-7">
         <p><strong>注重隐私</strong>: 用户数据安全地储存在浏览器本地，贯彻隐私设计原则。</p>
         <p><strong>AI 听译</strong>: 利用先进的人工智能算法，准确实时地听译播客内容。 </p>
         <p>
@@ -28,7 +28,7 @@ export default function Page() {
         </p>
       </div>
       <h3 className="font-bold text-lg text-pink-500 my-3">版本信息</h3>
-      <div className="bg-white p-8 rounded-lg text-gray-700 leading-7">
+      <div className="bg-white p-8 rounded-lg text-sm text-gray-700 leading-7">
         <p>
           当前版本：v{process.env.VERSION} (Build: {process.env.BUILD_TIME})
         </p>
